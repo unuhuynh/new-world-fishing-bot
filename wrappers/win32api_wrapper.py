@@ -10,10 +10,12 @@ def click_mouse_with_coordinates(x, y):
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)
 
 VK_CODE = {'tab':0x09,
-           'b':0x42,
-           'e':0x45,
-           'r':0x52,
-           'F3':0x72}
+            'a':0x41, 
+            'b':0x42,
+            'd':0x44, 
+            'e':0x45, 
+            'r':0x52, 
+            'F3':0x72}
 
 def press_key(key):
     win32api.keybd_event(VK_CODE[key], 0,0,0)

@@ -39,13 +39,24 @@ def cast():
     debug("press b")
     press_key('b')
 
-def repairing():
-    release_key('b')
-    arm_disarm_timeout = random_timeout(dict['repairing']['timeouts']['arm_disarm'])
-    debug("Disarm fishing rod. Total time: {} s".format(arm_disarm_timeout))
-    arm_disarm_fishing_rod(arm_disarm_timeout)
+def repairing(): 
+    release_key('b') 
+    arm_disarm_timeout = random_timeout(dict['repairing']['timeouts']['arm_disarm']) 
+    debug("Disarm fishing rod. Total time: {} s".format(arm_disarm_timeout)) 
+    arm_disarm_fishing_rod(arm_disarm_timeout) 
+  
+    # Copy and paste this section.
+    debug("Move to prevent AFK kick. Total time: 2.5 s")
+    sleep(0.5)
+    press_key('a')
+    sleep(0.5)
+    release_key('a')
+    sleep(1.5) # Wait between movement because of deceleration times.
+    press_key('d')
+    sleep(0.5)
+    release_key('d')
 
-    inventory_timeout = random_timeout(dict['repairing']['timeouts']['inventory'])
+    inventory_timeout = random_timeout(dict['repairing']['timeouts']['inventory']) 
     debug("Open inventory. Total time: {} s".format(inventory_timeout))
     open_close_inventory(inventory_timeout)
 
